@@ -20,7 +20,7 @@ group :development do
 end
 #gemfile for devise
 gem 'devise'
-gem 'omniauth'
+
 
 group :development, :test do
   gem 'pry-byebug'
