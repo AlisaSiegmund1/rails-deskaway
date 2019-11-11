@@ -1,4 +1,4 @@
 class Workspace < ApplicationRecord
   belong_to :user
-  has_many :bookings
+  has_many :booking
 end
