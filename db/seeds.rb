@@ -8,6 +8,23 @@
 
 require 'faker'
 
-10.times do Workspace.create(name: "workspace in #{Faker::Address.community}", address: Faker::Address.street_address, company: Faker::Hipster.sentences(1), price: (1..10).to_a.sample, capacity: (1..10).to_a.sample, image: "https://unsplash.com/photos/Z9Rx4im9qLs")
+User.delete_all
+Workspace.delete_all
+
+user = User.create!(
+  email: 'user@mail.com',
+  password: 'password'
+)
+
+10.times do
+  Workspace.create!(
+    name: "workspace in #{Faker::Address.community}",
+    address: Faker::Address.street_address,
+    company: Faker::Company.name,
+    price_per_hour: (1..10).to_a.sample,
+    capacity: (1..10).to_a.sample,
+    photo: "https://unsplash.com/photos/Z9Rx4im9qLs",
+    user: user
+  )
   puts "created workspace"
 end
