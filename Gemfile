@@ -20,6 +20,12 @@ gem 'faker'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
+#gemfile for devise
+gem 'devise'
+
+#gemfile for pundit
+gem 'pundit'
+
 
 group :development, :test do
   gem 'pry-byebug'
