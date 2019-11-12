@@ -10,10 +10,7 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
-  <div class="navbar <%= params[:controller] == 'pages' && params[:action] == 'home' ? 'homepage' : '' %>">
-    <%= link_to 'Register', new_user_registration_path%>
-    <%= link_to 'Login', new_user_session_path%>
-  </div>
+  <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
 
   <%= yield %>
