@@ -8,11 +8,18 @@
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 </head>
 <body>
+  <div class="navbar <%= params[:controller] == 'pages' && params[:action] == 'home' ? 'homepage' : '' %>">
+    <%= link_to 'Register', new_user_registration_path%>
+    <%= link_to 'Login', new_user_session_path%>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <%= yield %>
+
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </body>
