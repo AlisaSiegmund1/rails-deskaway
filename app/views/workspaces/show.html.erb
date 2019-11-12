@@ -1,2 +1,12 @@
-<h1>Workspaces#show</h1>
-<p>Find me in app/views/workspaces/show.html.erb</p>
+<div class="container">
+
+  <h1>Details: <%= @workspace.name %></h1>
+  <%= cl_image_tag @workspace.photo, style: 'width: 200px, height:200px'%>
+
+  <h3> Address:</h3>
+    <%= @workspace.address %>
+  <h3> Capacity:</h3>
+    <%= @workspace.capacity %>
+  <h3> Company:</h3>
+    <%= @workspace.company %>
+</div>
