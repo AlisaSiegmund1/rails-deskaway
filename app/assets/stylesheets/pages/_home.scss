@@ -1,9 +1,14 @@
 // Specific CSS for your home-page
-
 .container-bg-image {
   background: url('https://res.cloudinary.com/siggimsiggi/image/upload/v1573569003/toa-heftiba-FV3GConVSss-unsplash_ze4pt7.jpg');
   background-size: cover;
   width: 100%;
   height: 100vh;
+}
 
+.container-bg-image-form {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/siggimsiggi/image/upload/v1573569003/toa-heftiba-FV3GConVSss-unsplash_ze4pt7.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
