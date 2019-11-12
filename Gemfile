@@ -22,6 +22,9 @@ end
 #gemfile for devise
 gem 'devise'
 
+#gemfile for pundit
+gem 'pundit'
+
 
 group :development, :test do
   gem 'pry-byebug'
