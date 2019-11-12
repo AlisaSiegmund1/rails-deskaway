@@ -4,19 +4,16 @@
   background-color: white;
   margin: 0 0;
   padding: 0 0;
-  height: 40px;
+  height: 60px;
   a {
-    padding: 10px 10px;
+    padding: 10px 20px;
+    margin: 0 5px;
     text-decoration: none;
     letter-spacing: 2px;
     color: black;
     font-weight: lighter;
   }
   a:hover {
-    padding: 10px 10px;
-    text-decoration: none;
-    color: black;
-    font-weight: lighter;
     border-bottom: 1px solid black;
   }
 }
