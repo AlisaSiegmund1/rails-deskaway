@@ -40,5 +40,6 @@ class WorkspacesController < ApplicationController
 
   def set_workspace
     @workspace = Workspace.find(params[:id])
+    authorize workspace
   end
 end

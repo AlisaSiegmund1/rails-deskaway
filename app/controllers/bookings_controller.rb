@@ -30,5 +30,6 @@ class BookingsController < ApplicationController
 
   def set_workspace
     @workspace = Workspace.find(params[:workspace_id])
+    authorize @booking
   end
 end
