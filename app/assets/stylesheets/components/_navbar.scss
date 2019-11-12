@@ -4,29 +4,28 @@
   background-color: white;
   margin: 0 0;
   padding: 0 0;
-  height: 50px;
-}
-.navbar.homepage{
-  background-color: transparent;
-}
-
+  height: 40px;
   a {
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-decoration: none;
     letter-spacing: 2px;
     color: black;
     font-weight: lighter;
   }
   a:hover {
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-decoration: none;
     color: black;
     font-weight: lighter;
     border-bottom: 1px solid black;
-
-
-
+  }
 }
+
+.navbar.homepage {
+  background-color: transparent;
+}
+
+
 .navbar.navbar-collapse {
   flex-grow: 0;
 }
