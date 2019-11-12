@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_index, notice: 'Booking was successfully added.'
     else
-      render :edit
+      render :new
     end
   end
 
