@@ -2,31 +2,28 @@
   display: flex;
   justify-content: flex-end;
   background-color: white;
-  margin: 0 0;
+  margin: 10px 0;
   padding: 0 0;
-  height: 50px;
-}
-.navbar.homepage{
-  background-color: transparent;
-}
-
+  height: 40px;
+  
   a {
     padding: 10px 20px;
+    margin: 0 5px;
     text-decoration: none;
     letter-spacing: 2px;
     color: black;
     font-weight: lighter;
   }
   a:hover {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: black;
-    font-weight: lighter;
     border-bottom: 1px solid black;
-
-
-
+  }
 }
+
+.navbar.homepage {
+  background-color: transparent;
+}
+
+
 .navbar.navbar-collapse {
   flex-grow: 0;
 }
