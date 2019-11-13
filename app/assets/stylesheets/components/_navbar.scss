@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: white;
   padding: 0;
 
@@ -12,6 +12,14 @@
     color: black;
     font-weight: lighter;
     border-bottom: 2px solid transparent;
+
+    &.page-logo {
+      padding: 0;
+
+      img {
+        height: 65px;
+      }
+    }
   }
 
   a:hover {
@@ -38,4 +46,3 @@
 .navbar .navbar-brand img {
   width: 50px;
 }
-
