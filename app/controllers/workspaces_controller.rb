@@ -1,19 +1,23 @@
 class WorkspacesController < ApplicationController
-  before_action :set_workspace, only: [:show, :edit, :update]
+  before_action :set_workspace, only: [:show, :edit, :update, :index]
+
   def show
-    set_workspace
   end
 
   def index
-    @workspaces = Workspace.all
+  @workspaces = Workspace.all
+  # @workspace = policy_scope(Workspace).order(created_at: :asc) #workspace policy has scope.all , set the order of the workspaces
   end
 
   def new
     @workspace = Workspace.new
+    # authorize @workspace
   end
 
   def create
     @workspace = Workspace.new(workspace_params)
+    @workspace.user = current_user
+    # authorize @workspace
 
     if @workspace.save
       redirect_to workspaces_path
@@ -23,11 +27,9 @@ class WorkspacesController < ApplicationController
   end
 
   def edit
-    set_workspace
   end
 
   def update
-    set_workspace
     @workspace.update(workspace_params)
     redirect_to workspace_path(@workspace)
   end
@@ -40,6 +42,6 @@ class WorkspacesController < ApplicationController
 
   def set_workspace
     @workspace = Workspace.find(params[:id])
-    authorize workspace
+    authorize @workspace
   end
 end
