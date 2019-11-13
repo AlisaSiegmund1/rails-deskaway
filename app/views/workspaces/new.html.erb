@@ -8,9 +8,10 @@
               <%= f.input :name, wrapper_html: {class: 'span6', style:'width: 450px'}, required: true, autofocus: true %>
               <%= f.input :company, wrapper_html: {class: 'span6', style:'width: 300px'}, autofocus: true %>
             </div>
-            <%= f.input :address, label: 'Address',required: true, autofocus: true%>
-            <%= f.input :general_description, required: true, autofocus: true %>
-            <%= f.input :capacity, wrapper_html: {class: 'span6', style:'width: 100px'}, required: true, autofocus: true %>
+              <%= f.input :address, label: 'Address',required: true, autofocus: true%>
+              <%= f.input :general_description, required: true, autofocus: true %>
+              <%= f.input :capacity, wrapper_html: {class: 'span6', style:'width: 100px, padding-right: 30px'}, required: true, autofocus: true %>
+              <%= f.input :price_per_hour, wrapper_html: {class: 'span6', style:'width: 200px'}, required: true, autofocus: true %>
             <%= f.input :photo, required: true, autofocus: true%>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.submit "Create Workspace", class: "btn" %>
