@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_workspace
+  before_action :set_booking
 
   def index
     # @bookings = policy_scope(Booking).order(:date)
@@ -28,7 +28,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:date, :start_time, :end_time)
   end
 
-  def set_workspace
+  def set_booking
     @workspace = Workspace.find(params[:workspace_id])
+    authorize @booking
   end
 end
