@@ -1,2 +1,23 @@
-<h1>Workspaces#index</h1>
-<p>Find me in app/views/workspaces/index.html.erb</p>
+
+
+<h1>Find your workspace</h1>
+
+<% @workspaces.each do |workspace| %>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <%= @workspace.photo, class="card-img img-cover" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @workspace.name %></h5>
+        <p><%= @workspace.address %></p>
+        <p class="card-text"><%= @workspace.general_description %></p>
+        <p class="card-text"><small class="text-muted">This space is a part of: <%= @workspace.company %> </small></p>
+        <h2><%= workspace.price_per_hour %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+

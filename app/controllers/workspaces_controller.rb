@@ -1,11 +1,11 @@
 class WorkspacesController < ApplicationController
-  before_action :set_workspace, only: [:show, :edit, :update, :index]
+  before_action :set_workspace, only: [:show, :edit, :update]
 
   def show
   end
 
   def index
-  @workspaces = Workspace.all
+    @workspaces = Workspace.all
   #@workspace = policy_scope(Workspace).order(created_at: :asc) #workspace policy has scope.all , set the order of the workspaces
   end
 
