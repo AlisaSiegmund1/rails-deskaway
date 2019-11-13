@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_095508) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.integer "price_per_hour"
+    t.string "general_description"
     t.index ["user_id"], name: "index_workspaces_on_user_id"
   end
 
