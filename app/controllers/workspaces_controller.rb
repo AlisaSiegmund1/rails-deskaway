@@ -6,18 +6,18 @@ class WorkspacesController < ApplicationController
 
   def index
   @workspaces = Workspace.all
-  # @workspace = policy_scope(Workspace).order(created_at: :asc) #workspace policy has scope.all , set the order of the workspaces
+  #@workspace = policy_scope(Workspace).order(created_at: :asc) #workspace policy has scope.all , set the order of the workspaces
   end
 
   def new
     @workspace = Workspace.new
-    # authorize @workspace
+    #authorize @workspace
   end
 
   def create
     @workspace = Workspace.new(workspace_params)
     @workspace.user = current_user
-    # authorize @workspace
+    #authorize @workspace
 
     if @workspace.save
       redirect_to workspaces_path
