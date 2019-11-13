@@ -1,4 +1,13 @@
-<div class="navbar <%= params[:controller] == 'pages' && params[:action] == 'home' ? 'homepage' : '' %>">
+<div class="navbar fixed-top <%= params[:controller] == 'pages' && params[:action] == 'home' ? 'homepage' : 'pages' %>">
+  <% if current_user %>
+    <%= link_to image_tag('/assets/images/logo/logo.png') , root_path%>
+    <%= link_to 'Create Workspace', new_workspace_path%>
+    <%= link_to 'Edit Profile', edit_user_registration_path%>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+  <% else %>
     <%= link_to 'Register', new_user_registration_path%>
     <%= link_to 'Login', new_user_session_path%>
+  <% end %>
 </div>
+
+
