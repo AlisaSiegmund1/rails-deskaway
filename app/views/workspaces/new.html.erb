@@ -1,0 +1,20 @@
+<%= simple_form_for (@workspace) do |f| %>
+ <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 offset-sm-1">
+        <div class="form-edit-profil">
+          <h1>Create new Workspace</h1>
+            <div class="row d-flex justify-content-between" style="padding: 10px 18px">
+              <%= f.input :name, wrapper_html: {class: 'span6', style:'width: 450px'}, required: true, autofocus: true %>
+              <%= f.input :company, wrapper_html: {class: 'span6', style:'width: 300px'}, autofocus: true %>
+            </div>
+            <%= f.input :address, label: 'Address',required: true, autofocus: true%>
+            <%= f.input :general_description, required: true, autofocus: true %>
+            <%= f.input :capacity, wrapper_html: {class: 'span6', style:'width: 100px'}, required: true, autofocus: true %>
+            <%= f.input :photo, required: true, autofocus: true%>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.submit "Create Workspace", class: "btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,27 +1,34 @@
 class WorkspacePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      #anyone can view any workspace
+      # anyone can view any workspace
       scope.all
-
-      #display only workspaces of owner
-      #scope.where(user: user)
     end
   end
 
-  # def new?
-  #   return true
-  # end remove the new becuase it inherits from create
+  def index?
+    return true
+  end
 
-  # def create?
-  #   return true #anyone can create a workspace
-  # end
+  def new?
+    return true
+  end
 
-  # def edit?
-  #   record.user == user #condition already a boolean
-  # end it inherits from update
+  # anyone can view workspaces
+  def show?
+    return true
+  end
 
-  # def update?
-  #   record.user == user
-  # end
+  # anyone can create a workspace
+  def create?
+    return true
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def destroy?
+    record.user == user
+  end
 end
