@@ -1,29 +1,26 @@
-
-
 <div class="container">
   <h1>Find your workspace</h1>
   <% @workspaces.each do |workspace| %>
-  <div class="card indexcard mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <div>
-          <%= cl_image_tag (workspace.photo), {class: "card-img" }%>
+    <div class="card indexcard mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <div>
+            <%= cl_image_tag (workspace.photo), {class: "card-img" }%>
+          </div>
         </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= workspace.name %></h5>
-          <p class="address"><%= workspace.address %></p>
-          <p class="card-text"><%= workspace.general_description %></p>
-          <p class="card-text"><small class="text-muted">This space is a part of: <%= workspace.company %></small></p>
-          <h2>€<%= workspace.price_per_hour %>,- per hour</h2>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= workspace.name %></h5>
+            <p class="address"><%= workspace.address %></p>
+            <p class="card-text"><%= workspace.general_description %></p>
+            <p class="card-text"><small class="text-muted">This space is a part of: <%= workspace.company %></small></p>
+            <h2>€<%= workspace.price_per_hour %>,- per hour</h2>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    <% end %>
-  </div>
-  </div>
+  <% end %>
+</div>
 
 
 
