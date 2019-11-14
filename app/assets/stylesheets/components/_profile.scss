@@ -1,0 +1,41 @@
+.personal-info {
+  margin: 20px;
+  background-color: white;
+  padding: 30px 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
+.booking {
+  background-color: white; /*#F4F8FB*/
+  margin: 30px 8px;
+  padding: 0 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  a {
+    color:#5358E2;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  a:hover {
+    border-bottom: 2px solid #FE5D49;
+    text-decoration: none;
+  }
+}
+
+
+.booking-date {
+  background-color: #5358E2;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  p {
+    padding: 0 10px;
+    margin: 0 0;
+  }
+}
