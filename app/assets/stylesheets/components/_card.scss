@@ -1,11 +1,48 @@
-.indexcard {
-  margin: 30px 0;
-  background-color: white;
-  padding: 0px 0px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+
+.index-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  margin: 20px;
+  border-radius: 10px;
+  padding-left: 0;
+}
+
+.index-image{
+  padding: 0px;
+  position: relative;
+  color: white;
+  font-family: Roboto;
+  font-weight: 300;
+
+
+  img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px, 0px, 0px, 10px;
+  }
+  .category{
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  background: #FE5D49;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+
+  }
+}
+
+
+
+.ws-info {
+  // flex-grow: 2;
+  padding: 20px;
   h2 {
+    margin-bottom: 4px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -14,24 +51,15 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.05em;
+    color: #464752;
+  }
+  p {
+    // font-size: 14px;
   }
 }
 
-.cardtitle {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.05em;
-
-  color: #464752;
-
-}
-
-.address {
+.ws-address {
+  margin-top: 4px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
@@ -40,6 +68,114 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.1em;
-
   color: #5358E2;
 }
+
+
+.ws-owner {
+  // flex-grow: 1;
+}
+
+.ws-ut-price {
+  display: flex;
+  justify-content: space-between;
+  h5{
+    color: #5358E2;
+    font-weight: 400;
+  }
+}
+
+.roudedleft{
+  border-radius: 10px;
+}
+
+
+// // .card-product {
+// //   overflow: hidden;
+// //   height: 120px;
+// //   background: white;
+// //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// //   display: flex;
+// //   align-items: center;
+// // }
+
+// // .card-product img {
+// //   height: 100%;
+// //   width: 120px;
+// //   object-fit: cover;
+// // }
+
+// // .card-product h2 {
+// //   font-size: 16px;
+// //   font-weight: bold;
+// //   margin: 0;
+// // }
+
+// // .card-product p {
+// //   font-size: 12px;
+// //   line-height: 1.4;
+// //   opacity: .7;
+// //   margin-bottom: 0;
+// //   margin-top: 8px;
+// // }
+
+// // .card-product .card-product-infos {
+// //   padding: 16px;
+// // }
+
+// // --------------------------
+
+// .indexcard {
+//   margin: 30px 0;
+//   background-color: white;
+//   padding: 0px 0px;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 10px;
+//   display: flex;
+//   h2 {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 20px;
+//     line-height: 23px;
+//     display: flex;
+//     align-items: center;
+//     letter-spacing: 0.05em;
+//   }
+//   img {
+//     border-radius: 0px, 10px, 10px, 0px;
+//   }
+//   .roundleft{
+//     border-radius: 0px, 10px, 10px, 0px;
+//     padding: 10px;
+//   }
+// }
+
+
+
+// .cardtitle {
+//   font-family: Roboto;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 20px;
+//   line-height: 23px;
+//   display: flex;
+//   align-items: center;
+//   letter-spacing: 0.05em;
+
+//   color: #464752;
+
+// }
+
+// .address {
+//   font-family: Roboto;
+//   font-style: normal;
+//   font-weight: 300;
+//   font-size: 14px;
+//   line-height: 16px;
+//   display: flex;
+//   align-items: center;
+//   letter-spacing: 0.1em;
+
+//   color: #5358E2;
+// }
