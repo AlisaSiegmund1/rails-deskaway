@@ -9,9 +9,7 @@ class WorkspacesController < ApplicationController
 
   def index
     # @workspaces = Workspace.all
-    @workspaces = policy_scope(Workspace).order(created_at: :asc)
-
-    @workspaces = workspaces.geocoded
+    @workspaces = policy_scope(Workspace).order(created_at: :asc).geocoded
 
     @markers = @workspaces.map do |workspace|
       {

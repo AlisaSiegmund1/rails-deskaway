@@ -27,7 +27,7 @@ Workspace.create!(
   remote_photo_url: "https://images.pexels.com/photos/389818/pexels-photo-389818.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   price_per_hour: 4,
   general_description: "I have an extra spot in my house for someone to work. Its is a comfortable table with a nice view. And most important FREE coffee!",
-  user: user,
+  user: user
   )
 
 Workspace.create!(
@@ -38,7 +38,7 @@ Workspace.create!(
   remote_photo_url: "https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500(102 kB)",
   price_per_hour: 5,
   general_description: "Come sit here! Sit together with like-minded people. Very good wifi and lunch",
-  user: user,
+  user: user
   )
 
 Workspace.create!(
@@ -49,7 +49,7 @@ Workspace.create!(
   remote_photo_url: "https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   price_per_hour: 6,
   general_description: "Spaces Herengracht offers private office spaces, flexible workspaces and creative meeting rooms to suit the needs of your business as it grows.!",
-  user: user,
+  user: user
   )
 
 
