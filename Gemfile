@@ -16,7 +16,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'faker'
-gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
 group :development do
