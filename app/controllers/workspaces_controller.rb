@@ -27,7 +27,6 @@ class WorkspacesController < ApplicationController
     authorize @workspace
 
     if @workspace.save
-      binding.pry
       params.require(:utilities).each do |utility_id| # will have to be permitted
         @workspace.workspace_details.create(utility_id: utility_id)
       end
@@ -54,7 +53,7 @@ class WorkspacesController < ApplicationController
   private
 
   def workspace_params
-    params.require(:workspace).permit(:name, :address, :capacity, :photo, :photo_cache)
+    params.require(:workspace).permit(:name, :address, :capacity, :photo, :photo_cache, :general_description, :price_per_hour)
   end
 
   def set_workspace
