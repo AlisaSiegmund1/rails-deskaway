@@ -10,6 +10,16 @@ class WorkspacesController < ApplicationController
   def index
     # @workspaces = Workspace.all
     @workspaces = policy_scope(Workspace).order(created_at: :asc)
+
+    @workspaces = workspaces.geocoded
+
+    @markers = @workspaces.map do |workspace|
+      {
+        lat: workspace.latitude,
+        lng: workspace.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { workspace: workspace })
+      }
+    end
     # workspace policy has scope.all , set the order of the workspaces
   end
 

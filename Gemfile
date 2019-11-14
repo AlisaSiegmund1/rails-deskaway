@@ -28,6 +28,11 @@ gem 'devise'
 #gemfile for pundit
 gem 'pundit'
 
+# Gemfile
+gem 'geocoder'
+
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'pry-byebug'
