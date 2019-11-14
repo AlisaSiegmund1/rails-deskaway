@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_booking
+  before_action :set_workspace
 
   def index
-    # @bookings = policy_scope(Booking).order(:date)
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(:date)
+    # @bookings = Booking.all
   end
 
   def new
@@ -14,9 +14,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.workspace = @workspace
     @booking.user = current_user
+    authorize @booking
 
     if @booking.save
-      redirect_to bookings_index, notice: 'Booking was successfully added.'
+      redirect_to profile_path, notice: "Your booking was created!"
     else
       render :new
     end
@@ -28,8 +29,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:date, :start_time, :end_time)
   end
 
-  def set_booking
+  def set_workspace
     @workspace = Workspace.find(params[:workspace_id])
-    authorize @booking
   end
 end
