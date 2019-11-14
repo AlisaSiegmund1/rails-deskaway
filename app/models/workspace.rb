@@ -10,4 +10,12 @@ class Workspace < ApplicationRecord
   validates :price_per_hour, presence: true
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
+
+
+  include PgSearch::Model
+  pg_search_scope :search_workspaces,
+    against: [:address],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

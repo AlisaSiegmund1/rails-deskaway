@@ -22,12 +22,20 @@ gem 'carrierwave', '~> 1.2'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
-#gemfile for devise
+# gemfile for devise
 gem 'devise'
 
-#gemfile for pundit
+# gemfile for pundit
 gem 'pundit'
 
+# gemifle for env not sharing keys
+gem 'dotenv-rails', groups: [:development, :test]
+
+# gemfile for search bar
+gem 'pg_search', '~> 2.3.0'
+
+# Gemfile for cloudinary
+gem 'cloudinary', '~> 1.9.1'
 
 group :development, :test do
   gem 'pry-byebug'
