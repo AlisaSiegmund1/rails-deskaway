@@ -1,3 +1,18 @@
 <div class="container-bg-image pt-4">
+
+<div class="form-search-homepage">
+  <%= form_tag workspaces_path, method: :get, class: "search-form-control form-group" do %>
+  <div class="search-form-control form-group">
+    <%= text_field_tag :query,params[:query], class: "form-control string required", placeholder: "Find a workspace"%>
+  <%= submit_tag "Search", class: "btn-nav" %>
+  </div>
+<% end %>
+
 </div>
+
+
+
+
+
+
 
