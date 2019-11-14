@@ -27,6 +27,9 @@ gem 'devise'
 # gemfile for pundit
 gem 'pundit'
 
+# Gemfile
+gem 'geocoder'
+
 # gemifle for env not sharing keys
 gem 'dotenv-rails', groups: [:development, :test]
 
