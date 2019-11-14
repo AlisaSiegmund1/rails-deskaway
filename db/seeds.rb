@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 
 User.delete_all
 Workspace.delete_all
@@ -17,8 +17,8 @@ user = User.create!(
 )
 
 
+# WORKSPACE SEEDS---------------------------------------------------
 puts "Creating workspaces..."
-
 Workspace.create!(
   name: "Workspace in lovely home",
   address: "Sarphatistraat 35, Amsterdam",
@@ -52,9 +52,67 @@ Workspace.create!(
   user: user
   )
 
+# UTILITIY SEEDS---------------------------------------------------
+puts "Creating utilities..."
+Utility.create!(
+  name: "pet friendly",
+  description: "Tenant is allowed to bring a dog",
+  icon: "fas fa-dog",
+  )
 
+Utility.create!(
+  name: "provides coffee",
+  description: "Workspace owner has a coffee-machine",
+  icon: "fas fa-coffee",
+  )
+Utility.create!(
+  name: "fast wifi",
+  description: "Workspace is providing fast internet",
+  icon: "fas fa-wifi",
+  )
+Utility.create!(
+  name: "provides screens",
+  description: "Workspace provides multiple Screens",
+  icon: "fas fa-desktop",
+  )
+Utility.create!(
+  name: "provides meeting rooms",
+  description: "Workspace has multiple meeting/ conference rooms that can be used by the tenant",
+  icon: "fas fa-users",
+  )
+Utility.create!(
+  name: "chatting/ phone calls are allowed",
+  description: "Tenant doesnt have to be silent",
+  icon:"far fa-comments",
+  )
+Utility.create!(
+  name: "provides canteen or kitchen",
+  description: "provides canteen or other convienent food places",
+  icon: "fas fa-utensils",
+  )
+Utility.create!(
+  name: "provides flipboards",
+  description: "Workspace provides flipboards that can be used by the tenant",
+  icon: "far fa-clipboard",
+  )
+Utility.create!(
+  name: "provides office utilties",
+  description: "Workspace provides office utilites such as pens, postits etc." ,
+  icon: "fas fa-pencil-ruler",
+  )
+Utility.create!(
+  name: "silent working",
+  description: "Tenant must be silent!",
+  icon: "fas fa-volume-mute",
+  )
+Utility.create!(
+  name:"provides printer",
+  description: "Workspace has a printer that can be used by the tenant",
+  icon: "fas fa-print",
+  )
 
-
+  puts "created workspace"
+  puts "created utilities"
 
 # type = %w[Private Company]
 # gd = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec pretium enim, id vulputate ipsum. Praesent faucibus tortor ligula, convallis tristique ante pretium ut. Ut vel rhoncus felis. Praesent quis tellus malesuada diam condimentum porta id in sem. Maecenas at purus magna massa nunc.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tempor odio. Vivamus ultricies vestibulum magna. Cras sed arcu quis nulla blandit luctus sit amet pellentesque urna. Aenean lobortis vestibulum lorem, eu luctus turpis commodo vel. Aliquam pretium nunc in metus convallis cras amet.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet elit pretium, semper quam ac, dignissim nunc. Maecenas mi elit, imperdiet non tellus et, blandit consequat arcu. Mauris metus."]
@@ -72,5 +130,4 @@ Workspace.create!(
 #     general_description: gd.sample
 
 #   )
-  puts "created workspace"
 

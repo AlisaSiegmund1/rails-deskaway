@@ -1,0 +1,48 @@
+.app-dash-icon, .top-left>div
+{
+  vertical-align: top;
+}
+.top-left>.app-container~.app-container .app-dash:first-child
+{
+  padding-left: var(--side-padding);
+}
+.search-form
+
+{
+  height:1005
+  position:relative;
+}
+.search:hover .search-underline{
+  opacity: .4;
+}
+.search-underline
+{
+  margin-top:17px;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid #FFF
+}
+.search .icon-search, .search-underline
+{
+  z-index: :1;
+  transition:opacity var(--a-fast) var(--a-curve);
+  position:absolute;
+  top:50%
+}
+.search
+{
+    --width: 250px;
+    --icon-size: 16px;
+    min-height: 60px;
+    max-height: var(--max-height);
+    min-width: 100px;
+    display: inline-block;
+    flex: 0 1 auto;
+    order: 6;
+}
+.search, .search .search-input {
+    width: 100%;
+    max-width: var(--width);
+    position: relative;
+    cursor: pointer;
+}

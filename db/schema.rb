@@ -52,14 +52,15 @@ ActiveRecord::Schema.define(version: 2019_11_14_103256) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon"
   end
 
   create_table "workspace_details", force: :cascade do |t|
     t.bigint "workspace_id"
-    t.bigint "utilities_id"
+    t.bigint "utility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["utilities_id"], name: "index_workspace_details_on_utilities_id"
+    t.index ["utility_id"], name: "index_workspace_details_on_utility_id"
     t.index ["workspace_id"], name: "index_workspace_details_on_workspace_id"
   end
 
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_103256) do
 
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "workspaces"
-  add_foreign_key "workspace_details", "utilities", column: "utilities_id"
+  add_foreign_key "workspace_details", "utilities"
   add_foreign_key "workspace_details", "workspaces"
   add_foreign_key "workspaces", "users"
 end

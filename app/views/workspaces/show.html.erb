@@ -1,12 +1,42 @@
-<div class="container">
 
-  <h1>Details: <%= @workspace.name %></h1>
-  <%= cl_image_tag @workspace.photo, style: 'width: 200px, height:200px'%>
-
-  <h3> Address:</h3>
-    <%= @workspace.address %>
-  <h3> Capacity:</h3>
-    <%= @workspace.capacity %>
-  <h3> Company:</h3>
-    <%= @workspace.company %>
+<div class="leadimage colorline">
+ <%= cl_image_tag @workspace.photo%>
 </div>
+
+<div class="container">
+  <div class="row flexing">
+    <div class="showcard col-sm-12 col-md-8">
+      <h1><%= @workspace.name %></h1>
+      <h3><%= @workspace.address %></h3>
+      <h3>🏓  ☕️   🖨   🖥</h3>
+      <p><%= @workspace.general_description %></p>
+    </div>
+
+
+    <div class="bookingformshow col-sm-12 col-md-4">
+      <div>
+        <div class="bookinghead">
+         <h5>€<strong><%= @workspace.price_per_hour %></strong>,-</h5>
+         <h6>Per Hour</h6>
+       </div>
+
+       <div class="bookingbody">
+
+        <%= simple_form_for [@workspace, @booking] do |f| %>
+        <%= f.input :date %>
+        <%= f.input :start_time, collection: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] %>
+        <%= f.input :end_time, collection: [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] %>
+        <%= f.submit "add booking", class: "btn-v3" %>
+        <% end %>
+
+        <%= @workspace.capacity %>
+        <%= @workspace.company %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

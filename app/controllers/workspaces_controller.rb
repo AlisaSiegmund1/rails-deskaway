@@ -1,13 +1,15 @@
 class WorkspacesController < ApplicationController
-  skip_before_action :authenticate_user! , only: [:show,:index]
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
 
   before_action :set_workspace, only: [:show, :edit, :update]
 
   def show
     authorize @workspace
+    @booking = Booking.new
   end
 
   def index
+    
     # @workspaces = Workspace.all
     @workspaces = policy_scope(Workspace).order(created_at: :asc).geocoded
 
@@ -19,6 +21,11 @@ class WorkspacesController < ApplicationController
       }
     end
     # workspace policy has scope.all , set the order of the workspaces
+    if params[:query].present?
+      @workspaces = policy_scope(Workspace.search_workspaces(params[:query])).order(created_at: :asc)
+    else
+      @workspaces = policy_scope(Workspace).order(created_at: :desc)
+    end
   end
 
   def new
@@ -32,6 +39,10 @@ class WorkspacesController < ApplicationController
     authorize @workspace
 
     if @workspace.save
+      binding.pry
+      params.require(:utilities).each do |utility_id| # will have to be permitted
+        @workspace.workspace_details.create(utility_id: utility_id)
+      end
       redirect_to workspaces_path
     else
       render :new
