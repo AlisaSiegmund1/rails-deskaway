@@ -28,13 +28,16 @@
             <div class="form-actions">
               <%= f.button :submit, "Update" %>
             </div>
-
-            <div class="btn-v2">
-              <i class="fas fa-trash"></i>
-              <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+            <div class="row d-flex justify-content-between" style="padding: 10px 18px">
+              <div class="btn-v3">
+                <i class="fas fa-trash"></i>
+                <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+              </div>
               <div>
+              <div class="btn-v3">
                 <%= link_to "Back", :back %>
               </div>
+            </div>
             </div>
           </div>
         </div>

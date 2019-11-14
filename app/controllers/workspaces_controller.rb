@@ -9,6 +9,18 @@ class WorkspacesController < ApplicationController
   end
 
   def index
+    
+    # @workspaces = Workspace.all
+    @workspaces = policy_scope(Workspace).order(created_at: :asc).geocoded
+
+    @markers = @workspaces.map do |workspace|
+      {
+        lat: workspace.latitude,
+        lng: workspace.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { workspace: workspace })
+      }
+    end
+    # workspace policy has scope.all , set the order of the workspaces
     if params[:query].present?
       @workspaces = policy_scope(Workspace.search_workspaces(params[:query])).order(created_at: :asc)
     else
