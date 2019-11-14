@@ -1,0 +1,14 @@
+<%@utilities = Utility.all %>
+
+<h3>Utilities</h3>
+<div class="utilities">
+  <% @utilities.each do |utility| %>
+    <div class="utility">
+
+      <%= check_box_tag "utility-#{utility.id}", utility.id, false, name: 'utilities[]' %>
+      <label for="utility-<%=utility.id %>" class="<%= utility.icon %> icon" >
+      </label>
+
+    </div>
+  <% end %>
+</div>
