@@ -1,0 +1,19 @@
+.utilities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input[type=checkbox]+label {
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px;
+  border: 1px solid #CED4DA;
+  border-radius: 3px;
+  font-size: 40px;
+  color: #CED4DA;
+  text-align: center;
+  padding-top: 15px;
+}
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox]:checked + label, input[type=checkbox] + label:active {color:#5358E2; border: 1px solid #5358E2}
