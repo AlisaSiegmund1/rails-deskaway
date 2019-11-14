@@ -15,6 +15,7 @@
   color: white;
   font-family: Roboto;
   font-weight: 300;
+  max-height: 200px;
 
 
   img {
@@ -69,7 +70,9 @@
   align-items: center;
   letter-spacing: 0.1em;
   color: #5358E2;
+
 }
+
 
 
 .ws-owner {
@@ -79,9 +82,18 @@
 .ws-ut-price {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   h5{
     color: #5358E2;
     font-weight: 400;
+    padding: 0px;
+    line-height: 18px;
+  }
+  .ws-ut {
+  color: #464652;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.5em;
   }
 }
 

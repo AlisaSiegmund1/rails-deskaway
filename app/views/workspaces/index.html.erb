@@ -1,37 +1,31 @@
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-    <% @workspaces.each do |workspace| %>
-    <div class="index-card row">
+  <br>
+  <% @workspaces.each do |workspace| %>
+  <div class="index-card row">
 
-      <div class="index-image col-md-3">
-        <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" }%>
-        <p class="category"><%= workspace.company %></p>
-      </div>
+    <div class="index-image col-md-4">
+      <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" }%>
+      <p class="category"><%= workspace.company %></p>
+    </div>
 
-      <div class="ws-info col-md-7">
-        <div class="ws-text">
+    <div class="ws-info col-md-8">
+      <div class="ws-text">
+        <div class="headline">
           <h2 class="ws-title"><%= workspace.name %></h2>
-          <p class="ws-address"><%= workspace.address %></p>
-          <p class="ws-g-desc"><%= workspace.general_description %></p>
         </div>
-        <div class="ws-ut-price">
-          <h3>🏓  ☕️   🖨   🖥</h3>
-          <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
+        <p class="ws-address"><%= workspace.address %></p>
+        <p class="ws-g-desc"><%= workspace.general_description %></p>
+      </div>
+      <div class="ws-ut-price">
+        <div class="ws-ut">
+          <% workspace.utilities.each do |utility|  %>
+          <i class="<%= utility.icon %>"></i>
+          <% end %>
         </div>
+        <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
       </div>
 
-      <div class="ws-owner col-md-2">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      </div>
-
-    </div>
-    <% end %>
-    </div>
-  <div class="col-md-4">
-
-  <div
     id="map"
     style="width: 100%;
     height: 600px;"
@@ -42,63 +36,3 @@
   </div>
 </div>
 </div>
-
-
-
-
-
-
-
-<!--  <div class="container">
-  <h1>Find your workspace</h1>
-  <% @workspaces.each do |workspace| %>
-    <div class="card indexcard mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <div>
-            <%= cl_image_tag (workspace.photo), {class: "roundleft card-img" }%>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= workspace.name %></h5>
-            <p class="address"><%= workspace.address %></p>
-            <p class="card-text"><%= workspace.general_description %></p>
-            <p class="card-text"><small class="text-muted">This space is a part of: <%= workspace.company %></small></p>
-            <h2>€<%= workspace.price_per_hour %>,- per hour</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  <%end %>
-</div>
-
-
-
-<!-- <div class="container">
-  <% @workspaces.each do |workspace| %>
-    <div class="card-product">
-      <div>
-        <%= cl_image_tag (workspace.photo), {class: "roundleft card-img" }%>
-      </div>
-      <div class="card-product-infos">
-        <h5 class="card-title"><%= workspace.name %></h5>
-        <p class="address"><%= workspace.address %></p>
-        <p class="card-text"><%= workspace.general_description %></p>
-        <p class="card-text"><small class="text-muted">This space is a part of: <%= workspace.company %></small></p>
-        <h2>€<%= workspace.price_per_hour %>,- per hour</h2>
-      </div>
-    </div>
-<% end %>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
