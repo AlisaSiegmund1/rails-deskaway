@@ -1,38 +1,45 @@
 
 <div class="container">
-  <br>
-  <% @workspaces.each do |workspace| %>
-  <div class="index-card row">
+  <div class="row pt-4">
+    <div class="col-7">
+      <% @workspaces.each do |workspace| %>
+        <div class="index-card">
 
-    <div class="index-image col-md-4">
-      <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" }%>
-      <p class="category"><%= workspace.company %></p>
-    </div>
+          <div class="index-image col-md-4">
+            <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" } %>
+            <p class="category"><%= workspace.company %></p>
+          </div>
 
-    <div class="ws-info col-md-8">
-      <div class="ws-text">
-        <div class="headline">
-          <h2 class="ws-title"><%= workspace.name %></h2>
+          <div class="ws-info col-md-8">
+            <div class="ws-text">
+              <div class="headline">
+                <h2 class="ws-title"><%= workspace.name %></h2>
+              </div>
+              <p class="ws-address"><%= workspace.address %></p>
+              <p class="ws-g-desc"><%= workspace.general_description %></p>
+            </div>
+            <div class="ws-ut-price">
+              <div class="ws-ut">
+                <% workspace.utilities.each do |utility|  %>
+                  <i class="<%= utility.icon %>"></i>
+                <% end %>
+              </div>
+              <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
+            </div>
+
+          </div>
         </div>
-        <p class="ws-address"><%= workspace.address %></p>
-        <p class="ws-g-desc"><%= workspace.general_description %></p>
-      </div>
-      <div class="ws-ut-price">
-        <div class="ws-ut">
-          <% workspace.utilities.each do |utility|  %>
-          <i class="<%= utility.icon %>"></i>
-          <% end %>
-        </div>
-        <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
-      </div>
-
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <% end %>
     </div>
+    <div class="col-5">
+      <div id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
-</div>
+
+
+
 </div>
