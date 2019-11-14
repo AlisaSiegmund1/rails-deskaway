@@ -8,9 +8,11 @@ class WorkspacesController < ApplicationController
   end
 
   def index
-    # @workspaces = Workspace.all
-    @workspaces = policy_scope(Workspace).order(created_at: :asc)
-    # workspace policy has scope.all , set the order of the workspaces
+    if params[:query].present?
+      @workspaces = policy_scope(Workspace.search_workspaces(params[:query])).order(created_at: :asc)
+    else
+      @workspaces = policy_scope(Workspace).order(created_at: :desc)
+    end
   end
 
   def new

@@ -1,11 +1,19 @@
 <div class="navbar fixed-top <%= params[:controller] == 'pages' && params[:action] == 'home' ? 'homepage' : 'pages' %>">
   <%= link_to image_tag('logo/logo.png'), root_path, class: 'page-logo' %>
 
-  <div>
+
+   <%= form_tag workspaces_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,params[:query],class: "form-control", placeholder: "Find a workspace"%>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
+<div>
     <% if current_user %>
       <%= link_to 'Create Workspace', new_workspace_path%>
       <%= link_to 'Edit Profile', edit_user_registration_path%>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+
     <% else %>
       <%= link_to 'Register', new_user_registration_path%>
       <%= link_to 'Login', new_user_session_path%>
