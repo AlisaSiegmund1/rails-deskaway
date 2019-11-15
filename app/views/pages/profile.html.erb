@@ -24,9 +24,14 @@
           </div>
           <div class="booking-ws d-flex justify-content-between p-2">
             <div class="details d-flex flex-column pl-3">
-              <%= link_to booking.workspace.name, workspace_path( booking.workspace.id)%>
+              <%= link_to booking.workspace.name, workspace_path(booking.workspace.id)%>
               <p> <%= booking.start_time.strftime('%H:%M')%> - <%= booking.end_time.strftime('%H:%M') %></p>
-              <%= booking.workspace.address%>
+              <p> <%= booking.workspace.address%></p>
+            </div>
+            <div class="d-flex align-items-end pr-2">
+               <%=link_to 'Cancel', workspace_booking_path(booking.workspace, booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
             </div>
             <%#=image_tag("#{booking.workspace.photo}", :type => :upload, :radius => 100, :width => 100, :height => 110, :gravity=>"faces" ) %>
           </div>
