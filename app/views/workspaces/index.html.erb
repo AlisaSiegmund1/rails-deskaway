@@ -4,10 +4,8 @@
     <div class="col-md-7">
 
       <% if @workspaces.empty? %>
-        <h1>
-          <em>There are no spaces availble in this location</em>
-        </h1>
-        <img src="" alt="No workspace">
+        <h1 id="no-serach-result">Unfortunalty there are no workspaces availble in this location yet...</h1>
+
       <% else %>
 
         <% @workspaces.each do |workspace| %>
