@@ -46,8 +46,10 @@ class WorkspacesController < ApplicationController
     authorize @workspace
 
     if @workspace.save
-      params.require(:utilities).each do |utility_id| # will have to be permitted
-        @workspace.workspace_details.create(utility_id: utility_id)
+      if params[:utilities].present?
+        params.require(:utilities).each do |utility_id| # will have to be permitted
+          @workspace.workspace_details.create(utility_id: utility_id)
+        end
       end
       redirect_to workspace_path(@workspace)
     else
