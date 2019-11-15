@@ -78,9 +78,23 @@
   }
 }
 
+#heading {
+  text-align: center;
+  margin-top: 30px;
+}
 
 h5 {
   font-weight: bolder;
   color: #5358E2;
   font-size: 18px;
+}
+
+.link a{
+  color: #5358E2;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #FE5D49;
+  }
 }

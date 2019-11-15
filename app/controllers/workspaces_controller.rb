@@ -66,9 +66,10 @@ class WorkspacesController < ApplicationController
   end
 
   def destroy
-    @workspace.destroy(workspace_params)
-    redirect_to workspace_path(@workspace)
+    @workspace = Workspace.find(params[:id])
     authorize @workspace
+    @workspace.destroy
+    redirect_to profile_path, notice: "Booking is canceled!"
   end
 
   private
