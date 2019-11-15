@@ -1,10 +1,11 @@
 
-<div class="container">
+<div class="container ">
   <div class="row pt-4">
     <div class="col-md-7">
-
       <% if @workspaces.empty? %>
-        <h1 id="no-serach-result">Unfortunalty there are no workspaces availble in this location yet...</h1>
+        <div class="container ">
+            <h1 id="no-serach-result">Unfortunalty there are no workspaces availble in this location yet...</h1>
+        </div>
 
       <% else %>
 
@@ -40,10 +41,12 @@
         <% end %>
       <% end %>
     </div>
+
     <div class="col-md-5">
       <div id="map"
           data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>
