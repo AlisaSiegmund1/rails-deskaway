@@ -3,12 +3,12 @@
 <h2 class="pt-4">Utilities</h2>
 <div class="utilities pb-4">
   <% @utilities.each do |utility| %>
-    <div class="utility">
-
-      <%= check_box_tag "utility-#{utility.id}", utility.id, false, name: 'utilities[]' %>
+    <div class="utility" data-toggle="tooltip" data-placement="top" title="<%= utility.name %>">
+      <span>
+        <%= check_box_tag "utility-#{utility.id}", utility.id, false, name: 'utilities[]' %>
       <label for="utility-<%=utility.id %>" class="<%= utility.icon %> icon" >
       </label>
-
+    </span>
     </div>
   <% end %>
 </div>
