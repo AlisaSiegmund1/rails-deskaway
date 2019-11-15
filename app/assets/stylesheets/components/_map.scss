@@ -7,3 +7,32 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+}
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  #map {
+    display: none;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  #map {
+    display: block;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+   #map {
+    display: block;
+    }
+  }
