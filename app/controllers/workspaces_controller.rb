@@ -9,7 +9,7 @@ class WorkspacesController < ApplicationController
   end
 
   def index
-    
+
     # @workspaces = Workspace.all
     @workspaces = policy_scope(Workspace).order(created_at: :asc).geocoded
 
@@ -42,7 +42,7 @@ class WorkspacesController < ApplicationController
       params.require(:utilities).each do |utility_id| # will have to be permitted
         @workspace.workspace_details.create(utility_id: utility_id)
       end
-      redirect_to workspaces_path
+      redirect_to workspace_path(@workspace)
     else
       render :new
     end

@@ -1,21 +1,34 @@
 <div class="container text-center">
   <h1>Hi <%= current_user.first_name %>!</h1>
   <div class="row">
-     <div class="col-xs-12 col-sm-5 text-center offset-1">
+
+    <div class="col-xs-12 col-sm-5 text-center offset-1">
       <div class="personal-info">
         <%=image_tag("#{current_user.photo}", :type => :upload, :radius => 100, :width => 100, :height => 100, :gravity=>"faces" ) %>
         <p> </p>
-        <h5> <%= current_user.profession%>  </h5>
+        <h5><%= current_user.profession%>  </h5>
         <p><%= current_user.description %></p>
-        <div class="btn-v3" style="margin: auto">
-          <%= link_to 'Edit Profile', edit_user_registration_path%>
+        <div class="col-xs-12 col-sm-5">
+          <div class="btn-v3" style="margin: 25px">
+            <%= link_to 'Edit Profile', edit_user_registration_path%>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-5">
+    <div class="col-xs-12 col-sm-5 text-center">
       <div class="text-left"> <%#= personal-info // just a comment  %>
-        <%#=<h4>Your upcoming bookings:</h4>%>
+      <% if current_user.bookings.empty? %>
+        <div class="booking d-flex">
+          <div class="booking-date d-flex flex-column align-items-center justify-content-center">
+            <p> ? </p>
+          </div>
+          <div class="d-flex justify-content-between align-itmes-center pl-3">
+            <p style="margin: 20px 0"> No open bookings ...</p>
+            <p style="margin: 20px 0"><%= link_to "Find workspace", workspaces_path %></p>
+          </div>
+        </div>
+      <% else %>
         <% current_user.bookings.each do |booking| %>
         <div class="booking d-flex">
           <div class="booking-date d-flex flex-column align-items-center justify-content-center">
@@ -28,14 +41,36 @@
               <p> <%= booking.start_time.strftime('%H:%M')%> - <%= booking.end_time.strftime('%H:%M') %></p>
               <p> <%= booking.workspace.address%></p>
             </div>
-            <div class="d-flex align-items-end pr-2">
+            <div class="d-flex flex-column justify-content-between align-items-end pr-2">
+              <h5> € <%= (booking.end_time.hour - booking.start_time.hour) * booking.workspace.price_per_hour %>,- </h5>
                <%=link_to 'Cancel', workspace_booking_path(booking.workspace, booking),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
             </div>
-            <%#=image_tag("#{booking.workspace.photo}", :type => :upload, :radius => 100, :width => 100, :height => 110, :gravity=>"faces" ) %>
           </div>
         </div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-5 text-center offset-1">
+          <h4 style="text-align: center">Your workspace:</h4>
+          <% current_user.workspaces.each do |workspace| %>
+           <%= link_to workspace_path(workspace), class: 'go-away-url' do %>
+            <div class="d-flex flex-column">
+              <div class="workspacehead">
+                <h5 style="margin: auto"><%= workspace.name%></h5>
+              </div>
+              <div class="workspacebody d-flex justify-content-between">
+                <div class="d-flex flex-column">
+                <%=image_tag("#{workspace.photo}", :type => :upload, :radius => 300, :width =>410, :gravity=>"faces" ) %>
+                <p style="margin-top: 10px"><i class="fas fa-map-marker-alt"></i> <%= workspace.address%></p>
+                </div>
+            </div>
+          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
