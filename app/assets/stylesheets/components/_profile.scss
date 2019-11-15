@@ -8,7 +8,7 @@
 
 .booking-ws {
   width: 380px;
-}
+  }
 .booking {
   background-color: white; /*#F4F8FB*/
   margin: 30px 8px;
@@ -27,7 +27,15 @@
     border-bottom: 2px solid #FE5D49;
     text-decoration: none;
   }
+
+  .booking-details {
+    flex-grow: 1;
+    a {
+      padding-right: 10px;
+    }
+  }
 }
+
 
 .booking-date {
   background-color: #5358E2;
