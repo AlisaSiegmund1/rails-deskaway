@@ -20,13 +20,20 @@ class WorkspacesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { workspace: workspace })
       }
     end
-    # workspace policy has scope.all , set the order of the workspaces
+
     if params[:query].present?
       @workspaces = policy_scope(Workspace.search_workspaces(params[:query])).order(created_at: :asc)
     else
       @workspaces = policy_scope(Workspace).order(created_at: :desc)
     end
-  end
+
+    # @workspaces = Workspace.all
+    # if params[:address].present?
+    #    @workspaces = policy_scope(Workspace.search_workspaces(params[:address])).order(created_at: :asc)
+    #  else
+    #   flash[:notice] = "No office space available in the location"
+    # end
+    end
 
   def new
     @workspace = Workspace.new

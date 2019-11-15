@@ -3,34 +3,42 @@
   <div class="row pt-4">
     <div class="col-md-7">
 
-      <% @workspaces.each do |workspace| %>
+      <% if @workspaces.empty? %>
+        <h1>
+          <em>There are no spaces availble in this location</em>
+        </h1>
+        <img src="" alt="No workspace">
+      <% else %>
 
-        <%= link_to workspace_path(workspace), class: 'go-away-url' do %>
-          <div class="index-card">
-            <div class="index-image col-md-4">
-              <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" } %>
-              <p class="category"><%= workspace.company %></p>
-            </div>
+        <% @workspaces.each do |workspace| %>
 
-            <div class="ws-info col-md-8">
-              <div class="ws-text">
-                <div class="headline">
-                  <h2 class="ws-title"><%= workspace.name %></h2>
-                </div>
-                <p class="ws-address"><%= workspace.address %></p>
-                <p class="ws-g-desc"><%= workspace.general_description %></p>
-              </div>
-              <div class="ws-ut-price">
-                <div class="ws-ut">
-  <!--                 <% workspace.utilities.each do |utility|  %>
-                    <i class="<%= utility.icon %>"></i>
-                  <% end %> -->
-                </div>
-                <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
+          <%= link_to workspace_path(workspace), class: 'go-away-url' do %>
+            <div class="index-card">
+              <div class="index-image col-md-4">
+                <%= cl_image_tag (workspace.photo), {class: "card-img roundedleft" } %>
+                <p class="category"><%= workspace.company %></p>
               </div>
 
+              <div class="ws-info col-md-8">
+                <div class="ws-text">
+                  <div class="headline">
+                    <h2 class="ws-title"><%= workspace.name %></h2>
+                  </div>
+                  <p class="ws-address"><%= workspace.address %></p>
+                  <p class="ws-g-desc"><%= workspace.general_description %></p>
+                </div>
+                <div class="ws-ut-price">
+                  <div class="ws-ut">
+    <!--                 <% workspace.utilities.each do |utility|  %>
+                      <i class="<%= utility.icon %>"></i>
+                    <% end %> -->
+                  </div>
+                  <h5>€<strong><%= workspace.price_per_hour %></strong>,- p/hour</h5>
+                </div>
+
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
