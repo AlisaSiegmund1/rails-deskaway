@@ -54,9 +54,10 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mb-4">
       <div class="col-xs-12 col-sm-5 text-center offset-1">
-          <h4 style="text-align: center">Your workspace:</h4>
+          <% if !current_user.workspaces.empty? %>
+          <h4>Your workspace:</h4>
           <% current_user.workspaces.each do |workspace| %>
            <%= link_to workspace_path(workspace), class: 'go-away-url' do %>
             <div class="d-flex flex-column">
@@ -67,11 +68,20 @@
                 <div class="d-flex flex-column">
                 <%=image_tag("#{workspace.photo}", :type => :upload, :radius => 300, :width =>410, :gravity=>"faces" ) %>
                 <p style="margin-top: 10px"><i class="fas fa-map-marker-alt"></i> <%= workspace.address%></p>
+                <p class="link text-right pr-3">
+                <%= link_to 'Delete', workspace_path(workspace),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                </p>
                 </div>
             </div>
-          </div>
+            </div>
           <% end %>
         <% end %>
+        <% else %>
+        <div></div>
+        <% end %>
+
       </div>
     </div>
   </div>
