@@ -25,15 +25,31 @@
   border-radius: 10px;
   padding: 30px;
 
+.showcard2 {
+  overflow: hidden;
+  background: #ecb931;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 30px;
+}
 
+.utshow {
+    font-size: 20px;
+    color: #ecb931;
+    text-align: right;
+    padding-top: 15px;
+    letter-spacing: 0.6em;
+
+}
   h1{
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 40px;
-    line-height: 32px;
+    font-size: 35px;
+    line-height: 40px;
     align-items: center;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     color: #464752;
   }
   h3{
@@ -48,6 +64,51 @@
       color: #5358E2;
   }
 }
+
+.showcard img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  font-family: Roboto;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+#yellow {
+  background-color: #ecb931;
+}
+
 
 // .bookingformshow {
 
