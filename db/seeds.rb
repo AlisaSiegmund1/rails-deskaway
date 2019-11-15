@@ -90,6 +90,44 @@ Workspace.create!(
   general_description: "Great office, in the tech industry hub of berlin",
   user: user
   )
+  name: "Office park",
+  address: "Espaço amoreiras, Rua Dom João V 24,Lisbon",
+  capacity: 2,
+  company: "LEAP",
+  remote_photo_url: "https://images.unsplash.com/photo-1554835374-d00937300b17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+  price_per_hour: 10,
+  general_description: "LEAP's mission is to contribute positively and decisively to the development of Portuguese SMEs and to leverage entrepreneurship in Portugal.",
+  user: user
+  )
+  name: "Spaces Arroba Office ",
+  address: "Pallars 193 Barcelona",
+  capacity: 2,
+  company: "Spaces Arroba",
+  remote_photo_url: "https://images.unsplash.com/photo-1485087322071-235c96bb4297?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80",
+  price_per_hour: 10,
+  general_description: "The innovation center of Barcelona. Located within the innovative 22 @ district, Spaces 22 Arroba is privileged to have an extraordinary urban and metropolitan centrality .",
+  user: user
+  )
+  name: "Spaces Arroba Office ",
+  address: "Pallars 193 Barcelona",
+  capacity: 2,
+  company: "Spaces Arroba",
+  remote_photo_url: "https://images.unsplash.com/photo-1485087322071-235c96bb4297?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80",
+  price_per_hour: 10,
+  general_description: "The innovation center of Barcelona. Located within the innovative 22 @ district, Spaces 22 Arroba is privileged to have an extraordinary urban and metropolitan centrality .",
+  user: user
+  )
+  name: "Antwerp Office ",
+  address: "Lange Gasthuisstraat 29, Antwerpen",
+  capacity: 2,
+  company: "Startup Village",
+  remote_photo_url: "https://businessinantwerp.eu/sites/default/files/styles/large_free/public/2017-06/Centrum_Startupvillage_Jasper_Leonard_foto_2.jpg?itok=Zfhbd_Mm",
+  price_per_hour: 10,
+  general_description: "StartupVillage is a unique site in the city centre, at the heart of Antwerp’s startup movement. It provides local startups with a 24/7 business environment, affordable office space, and a readily available network of knowledge and business expertise.",
+  user: user
+  )
+
+
 
 
 
