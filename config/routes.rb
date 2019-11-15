@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get :profile, to: 'pages#profile'
 
   resources :workspaces do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :destroy]
   end
 
   resources :bookings, only: [:show, :index]

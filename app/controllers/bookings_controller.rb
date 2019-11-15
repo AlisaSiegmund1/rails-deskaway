@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to profile_path, notice: "Booking is canceled!"
+  end
+
   private
 
   def booking_params
