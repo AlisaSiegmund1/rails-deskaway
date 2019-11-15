@@ -3,7 +3,7 @@ class Workspace < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :workspace_details, dependent: :destroy
   has_many :utilities, through: :workspace_details
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
   validates :general_description, presence: true
   validates :address, presence: true
   validates :capacity, presence: true

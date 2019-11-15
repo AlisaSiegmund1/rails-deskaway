@@ -63,6 +63,9 @@ Workspace.create!(
   general_description: "It's is a comfortable table with a nice view, in the best part of paris",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Home Office",
   address: "17 Rue Linné, Paris",
   capacity: 2,
@@ -72,6 +75,9 @@ Workspace.create!(
   general_description: "Great home office, for focused individuals who want a home away from home wokr experience",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Office",
   address: "Chausseestraße 19, 10115 Berlin",
   capacity: 2,
@@ -81,6 +87,9 @@ Workspace.create!(
   general_description: "Great home office, in the tech industry hub of berlin",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Highbury desk",
   address: "12 Highbury Park, Highbury East, London",
   capacity: 2,
@@ -90,6 +99,9 @@ Workspace.create!(
   general_description: "Great office, in the tech industry hub of berlin",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Office park",
   address: "Espaço amoreiras, Rua Dom João V 24,Lisbon",
   capacity: 2,
@@ -99,6 +111,9 @@ Workspace.create!(
   general_description: "LEAP's mission is to contribute positively and decisively to the development of Portuguese SMEs and to leverage entrepreneurship in Portugal.",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Spaces Arroba Office ",
   address: "Pallars 193 Barcelona",
   capacity: 2,
@@ -108,6 +123,9 @@ Workspace.create!(
   general_description: "The innovation center of Barcelona. Located within the innovative 22 @ district, Spaces 22 Arroba is privileged to have an extraordinary urban and metropolitan centrality .",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Spaces Arroba Office ",
   address: "Pallars 193 Barcelona",
   capacity: 2,
@@ -117,6 +135,9 @@ Workspace.create!(
   general_description: "The innovation center of Barcelona. Located within the innovative 22 @ district, Spaces 22 Arroba is privileged to have an extraordinary urban and metropolitan centrality .",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
   name: "Antwerp Office ",
   address: "Lange Gasthuisstraat 29, Antwerpen",
   capacity: 2,
