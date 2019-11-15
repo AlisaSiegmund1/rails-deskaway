@@ -16,6 +16,10 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
 
+    # get the bookings for date the the user chose params[:date]
+    # get the capacity of the booking
+    # if number of booking >= capacity -> render workspaces/show with message
+
     if @booking.save
       redirect_to profile_path, notice: "Your booking was created!"
     else
