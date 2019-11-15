@@ -15,39 +15,47 @@
         <i class="<%= utility.icon %> utshow"></i>
         <% end %>
       </div>
-        <div id="map"
-        style="width: 100%;
-        height: 200px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+        <div class="d-flex">
+          <div class="personal-info-show text-center col-4">
+            <%= cl_image_tag(@workspace.user.photo, type: :upload, width: 120, height: 120, gravity: "faces", radius: :max) %>
+            <p></p>
+            <h5> <%= @workspace.user.profession%>  </h5>
+            <h6> <%= @workspace.user.first_name %> <%= @workspace.user.last_name %></h6>
+            <p><%= @workspace.user.description %></p>
+          </div>
+          <div class="personal-info-show col-7">
+            <h5>People in today</h5>
+
+
+          </div>
         </div>
+        <div id="map"
+              style="width: 100%;
+              height: 200px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
       </div>
 
 
 
-  <div class="col-sm-12 col-md-4">
-    <div class= "bookingformshow">
-      <div class="bookinghead">
-       <h5>€<strong><%= @workspace.price_per_hour %></strong>,-</h5>
-       <h6>Per Hour</h6>
-     </div>
-     <div class="bookingbody">
-      <%= simple_form_for [@workspace, @booking] do |f| %>
-      <%= f.input :date %>
-      <%= f.input :start_time, collection: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] %>
-      <%= f.input :end_time, collection: [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] %>
-      <%= f.submit "add booking", class: "btn-v3" %>
-      <% end %>
-    </div>
-    <div class="personal-info text-center" id="yellow">
-      <%=cl_image_tag(current_user.photo, :type => :upload, :radius => "max", :width => 100, :height => 100, :gravity=>"faces" ) %>
-      <p> </p>
-        <h5> <%= current_user.profession%>  </h5>
-        <p><%= current_user.description %></p>
-
+    <div class="col-sm-12 col-md-4">
+      <div class= "bookingformshow">
+        <div class="bookinghead">
+          <h5>€<strong><%= @workspace.price_per_hour %></strong>,-</h5>
+          <h6>Per Hour</h6>
+        </div>
+      <div class="bookingbody">
+        <%= simple_form_for [@workspace, @booking] do |f| %>
+        <%= f.input :date %>
+        <%= f.input :start_time, collection: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] %>
+        <%= f.input :end_time, collection: [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] %>
+        <%= f.submit "add booking", class: "btn-v3" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 
