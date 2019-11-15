@@ -46,11 +46,52 @@ Workspace.create!(
   address: "Herengracht 124, Amsterdam",
   capacity: 7,
   company: "Spaces",
-  remote_photo_url: "https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  remote_photo_url: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
   price_per_hour: 6,
   general_description: "Spaces Herengracht offers private office spaces, flexible workspaces and creative meeting rooms to suit the needs of your business as it grows.!",
   user: user
   )
+
+#Work spaces created by Siya Ndiki
+Workspace.create!(
+  name: "Champs-Elysees startup",
+  address: "Avenue des Champs-Elysees, Paris",
+  capacity: 2,
+  company: "Startup",
+  remote_photo_url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+  price_per_hour: 5,
+  general_description: "It's is a comfortable table with a nice view, in the best part of paris",
+  user: user
+  )
+  name: "Home Office",
+  address: "17 Rue Linné, Paris",
+  capacity: 2,
+  company: "Personal office",
+  remote_photo_url: "https://images.unsplash.com/photo-1526657782461-9fe13402a841?ixlib=rb-1.2.1&auto=format&fit=crop&w=638&q=80",
+  price_per_hour: 5,
+  general_description: "Great home office, for focused individuals who want a home away from home wokr experience",
+  user: user
+  )
+  name: "Office",
+  address: "Chausseestraße 19, 10115 Berlin",
+  capacity: 2,
+  company: "Personal office",
+  remote_photo_url: "https://images.unsplash.com/photo-1497681883844-82b4f0a359a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+  price_per_hour: 5,
+  general_description: "Great home office, in the tech industry hub of berlin",
+  user: user
+  )
+  name: "Highbury desk",
+  address: "12 Highbury Park, Highbury East, London",
+  capacity: 2,
+  company: "Startup office",
+  remote_photo_url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+  price_per_hour: 10,
+  general_description: "Great office, in the tech industry hub of berlin",
+  user: user
+  )
+
+
 
 # UTILITIY SEEDS---------------------------------------------------
 puts "Creating utilities..."
