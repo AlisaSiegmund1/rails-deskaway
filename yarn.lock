@@ -4202,8 +4202,8 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   dependencies:
     is-buffer "^1.1.5"
 
-kind-of@^4.0.0:
-  version "4.0.0"
+kind-of@^6.0.3:
+  version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
   integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
@@ -4654,8 +4654,8 @@ minimist-options@^3.0.1:
     arrify "^1.0.1"
     is-plain-obj "^1.1.0"
 
-minimist@0.0.5:
-  version "0.0.5"
+minimist@^1.2.3:
+  version "1.2.3"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.5.tgz#d7aa327bcecf518f9106ac6b8f003fa3bcea8566"
   integrity sha1-16oye87PUY+RBqxrjwA/o7zqhWY=
 
